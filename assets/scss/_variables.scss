@@ -1,0 +1,177 @@
+// @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+$font: "Noto Serif TC", "Lato", "微軟正黑體", "Microsoft JhengHei", Helvetica, Arial, sans-serif;
+
+$white: #fff;
+$brand-color: #231916;
+$bg-grey: #f5f5f5;
+$item-grey: #dcdcdc;
+$grey: #999;
+$black: #121212;
+$text: #666;
+$cross_bg: #c4c4c4;
+
+$regular-price: #612ba4;
+$old-price: #bbb;
+$special-price: #FF4C4C;
+
+$shipment-price: #439B4A;
+$total-prcie: #a94442;
+
+
+$darkblue: #1C1D21;
+$minor-color: #00D2FF;
+$map-control-color: #8D0755;
+$facebook-color: #3a589b;
+$twitter-color: #19bfe8;
+$googleplus-color: #d64136;
+$flickr-color: #DF3392;
+$youtube-color: #e53b51;
+$weixin-color: #00D00D;
+$line-color: #00b900;
+$instagram-color: #e1306c;
+
+
+//search切換顏色
+$sites: 	 bright, 		  dark;
+$icon-color: $brand-color,    #fff;
+$input-color:#2C2C2C,       #fff;
+$color:      rgba(#fff,.95),  rgba(#000,.95);
+$style: index($sites,dark);
+
+
+
+%clearfix {
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+}
+%link-hover {
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+%width-animate {
+    -webkit-transition: width 400ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    -moz-transition: width 400ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    -o-transition: width 400ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    transition: width 400ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    -webkit-transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    -moz-transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    -o-transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+}
+%fadeIn {
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+    -o-animation-name: fadeIn;
+    animation-name: fadeIn;
+    animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+%inline-block {
+    display: inline-block;
+}
+
+
+%item-list-bg-hover {
+    background: #131415;
+    color: #D4D4D4;
+}
+
+%img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+%paragraph-text {
+    font-size: 1.05em;
+    line-height: 1.8em;
+    text-align: justify;
+}
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+@mixin transform($transforms...) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+	transform: $transforms;
+}
+@mixin text-overflow {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: pre-line;
+}
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+@mixin img-responsive {
+    width: 100%;
+    height: auto;
+}
+@mixin divider($space) {
+    &:after {
+        display: block;
+        content: "";
+        height: 1px;
+        margin: $space 0;
+        border-bottom: 1px dotted #f2f2f2;      
+        @content 
+    }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+}
+@mixin brand-color-hover {
+    @extend %link-hover;
+    &:hover {
+      @content;
+    }
+}
+@mixin max-screen($max) {
+	@media screen and (max-width: $max) {
+    	@content;
+	}
+}
+@mixin min-screen($min) {
+	@media screen and (min-width: $min) {
+		@content;
+	}
+}
+//橫螢幕
+@mixin screen($min, $max, $orientation: true) {
+	@media screen and (max-width: 767px) and (orientation: landscape) {
+		@content;
+	}
+}
