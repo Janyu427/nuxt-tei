@@ -24,6 +24,11 @@ jobs:
       - name: Generate static files
         run: npm run generate
 
+      - name: Set up Git config
+        run: |
+          git config --global user.name "Janyu427"
+          git config --global user.email "janyu427130@gmail.com"  
+
       - name: Deploy to GitHub Pages
         run: npm run deploy
 
