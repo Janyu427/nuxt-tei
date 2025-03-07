@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="footer_bottom">
-                <p class="copyright">Copyright © TEI-I INTERIOR DESIGN All right reserve.</p>
+                <p class="copyright">test Copyright © TEI-I INTERIOR DESIGN All right reserve.</p>
             </div>
             <div class="goTop_box" @click="goTop">
                 <p class="text">Page Top</p>
