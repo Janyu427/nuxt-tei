@@ -27,7 +27,11 @@ jobs:
       - name: Set up Git config
         run: |
           git config --global user.name "Janyu427"
-          git config --global user.email "janyu427130@gmail.com"  
+          git config --global user.email "janyu427130@gmail.com"
+
+      - name: Set url origin
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git    
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
