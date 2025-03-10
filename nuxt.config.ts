@@ -2,9 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  app: {
-    baseURL: process.env.NODE_ENV === 'production' ? '/nuxt-tei/' : '/'
-  },
+  app: {},
 
   vite: {
     css: {
