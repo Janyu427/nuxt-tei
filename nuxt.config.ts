@@ -3,8 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   app: {
-    baseURL: process.env.NODE_ENV === 'production' ? '/nuxt-tei/' : '/',
-    buildAssetsDir: '/static/'
+    baseURL: process.env.NODE_ENV === 'production' ? '/nuxt-tei/' : '/'
   },
 
   vite: {
