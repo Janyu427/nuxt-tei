@@ -2,7 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  app: {},
+  app: {
+    "baseURL": "/",
+    "buildAssetsDir": "/_nuxt/"
+  },
 
   vite: {
     css: {
